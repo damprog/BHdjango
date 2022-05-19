@@ -128,7 +128,7 @@ def feedbackApi(request, id=0):
         if feedback_serializer.is_valid():
             feedback_serializer.save()
             return JsonResponse("Updated Successfully!", safe=False)
-        return JsonResponse("Failed to Update.")
+        return JsonResponse("Failed to Update.", safe=False)
 
     elif request.method=='DELETE':
         feedback=Feedback.objects.get(FeedbackId=id)

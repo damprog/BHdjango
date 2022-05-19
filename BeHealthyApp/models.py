@@ -9,6 +9,7 @@ class Packages(models.Model):
 class Users(models.Model):
     UserId = models.AutoField(primary_key=True)
     UserName = models.CharField(max_length=100, null=False)
+    Password = models.CharField(max_length=100, null = False)
     Admin = models.BooleanField(null=False)
     PhotoFileName = models.CharField(max_length=100)
     Package = models.ForeignKey(Packages, on_delete=models.CASCADE)
@@ -28,4 +29,5 @@ class Feedback(models.Model):
     FeedbackId = models.AutoField(primary_key=True)
     UserId = models.ForeignKey(Users, on_delete=models.CASCADE)
     Email = models.CharField(max_length=100)
+    Content = models.CharField(max_length=300)
 

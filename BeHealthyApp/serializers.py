@@ -7,11 +7,13 @@ class PackageSerializer(serializers.ModelSerializer):
         fields = ( 'PackageId',
                     'PackageName',
                     'Price')
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Users
         fields = ( 'UserId',
                     'UserName',
+                    'Password',
                     'Admin',
                     'PhotoFileName',
                     'Package')
@@ -34,4 +36,5 @@ class FeedbackSerializer(serializers.ModelSerializer):
         model = Feedback
         fields = ( 'FeedbackId',
                     'UserId',
-                    'Email')
+                    'Email',
+                    'Content')
